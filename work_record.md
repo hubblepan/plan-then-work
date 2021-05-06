@@ -1,4 +1,4 @@
-## 04
+## 4
 
 ### 04-09
 
@@ -108,9 +108,94 @@
 #### 05-06
 
 - [x] 临时保存
+
   - [x] 新增-prefs(userId_quality_cache_add)
   - [x] 整改-prefs(userId_quality_cache_rectify_recordId)
   - [x] 逻辑开发
   - [x] 测试
+
 - [ ] 整理 资产公司 web版的问题
-- [ ] 同步typora笔记-使用github-android
+
+- [x] 同步typora笔记-使用github-android
+
+- [x] 16:30 整理资产公司web版评审问题
+
+  - 大盘-质量管理-隐患问题
+
+  ```
+  1. 接口问题
+  2. 显示问题
+  ```
+
+  - 大盘-质量管理-质量验收改为复查流程数据
+
+  ```
+  复查申请， 今日复查申请， 待复查， 复查一次通过率
+  ```
+
+  - 大盘-质量管理-最新动态
+
+  ```
+  显示最新的整改 和 复查
+  ```
+
+  - 看板责任人统计图表改为整改人统计图表
+
+  ```
+  原来的接口和ui
+  最新的接口和ui
+  ```
+
+- [x] 17:00 整理资产公司web版需要变动的接口
+
+  - 获取隐患数量个数-对应紧急程度数据
+
+    ```
+    http://localhost:9001/api/admin/business/riskRecord/notDisappearNum
+    超期数据， 未整改数据， 严重问题， 一般问题， 紧要问题，细微问题  6个数据
+    
+    ```
+
+  - 质量验收数据-对应-复查流程数据
+
+    ```
+    http://47.98.198.53:8032/api/admin/business/acceptanceRecord/getAcceptanceCount
+    复查申请， 今日复查申请， 待复查， 复查一次通过率 4个数据
+    ```
+
+    
+
+  - 最新动态数据-对应-最新的整改和复查数据
+
+    ```
+    http://47.98.198.53:8032/api/admin/business/riskRecord/newDynamic
+    最新的几条质量检查记录列表
+    ```
+
+    
+
+  - 看板责任人统计图表-对应-整改人统计图表
+
+    ```
+    http://47.98.198.53:8032/api/admin/business/riskRecord/responsiblePersonAnalysis
+    列表(整改人， 整改人的问题数量)
+    ```
+
+  - 问题类型-对应-问题分类
+
+    ```
+    http://47.98.198.53:8032/api/admin/business/riskRecord/hazardTypeAnalysis
+    列表(问题分类， 问题分类个数)
+    拿固定第三层的数据(第一第二层为目录)， 属于该问题分类的个数
+    ```
+
+  - 最新质量复查记录
+
+    ```
+    http://47.98.198.53:8032/api/admin/business/acceptanceRecord/listAcceptanceRecordRecord
+    最新的已复查的质量检查记录列表-含缩略图
+    ```
+
+    
+
+  
